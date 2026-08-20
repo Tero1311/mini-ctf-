@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 3 - Inspector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧩 Inspector</h1>
+        <p>Challenge 3 — Medium</p>
+    </header>
+
+    <main>
+
+        <div class="challenge">
+
+            <h2>Your Mission</h2>
+
+            <p>
+                The page is hiding something from you.
+            </p>
+
+            <p>
+                Maybe the browser knows more than what you can see.
+            </p>
+
+            <button onclick="checkSecret()">
+                Check Secret
+            </button>
+
+            <p id="result"></p>
+            
+            <form action="/submit/challenge3" method="POST">
+                <input
+                   type="text"
+                   name="flag"
+                   placeholder="Enter the flag"
+                   required
+                >
+                <button type="submit">
+                   Submit Flag
+                </button>
+
+            </form>
+
+        </div>
+
+        <p>
+            <a href="/">← Back to Challenges</a>
+        </p>
+
+    </main>
+
+    <script>
+        function checkSecret() {
+
+            const secret = "CTF_INSPECTOR_2026";
+
+            const userInput = prompt("Enter the secret:");
+
+            if (userInput === secret) {
+                document.getElementById("result").innerText =
+                    "Correct! Now find the flag.<br><br>"+
+                    "FLAG{client_side_is_not_secret}";
+            } else {
+                document.getElementById("result").innerText =
+                    "Wrong secret.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

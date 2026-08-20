@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 1 - Source Hunt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🔎 Source Hunt</h1>
+        <p>Challenge 1 — Easy</p>
+    </header>
+
+    <main>
+
+        <div class="challenge">
+            <h2>Your Mission</h2>
+
+            <p>
+                There is a flag hidden somewhere on this page.
+            </p>
+
+            <p>
+                Find it and submit it below.
+            </p>
+
+            <!-- FLAG{source_code_is_information} -->
+
+            <form action="/submit/challenge1" method="POST">
+
+                <input
+                    type="text"
+                    name="flag"
+                    placeholder="Enter the flag"
+                    required
+                >
+
+                <button type="submit">
+                    Submit Flag
+                </button>
+
+            </form>
+
+        </div>
+
+        <p>
+            <a href="/">← Back to Challenges</a>
+        </p>
+
+    </main>
+
+</body>
+</html>
